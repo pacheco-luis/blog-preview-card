@@ -1,0 +1,140 @@
+// Colors
+// --------------------------------------------------
+$color-yellow: hsl(47, 88%, 63%);
+$color-white: hsl(0, 0%, 100%);
+$color-gray-500: hsl(0, 0%, 42%);
+$color-gray-950: hsl(0, 0%, 7%);
+
+// Shadows
+// --------------------------------------------------
+$drop-shadow: 0.8rem 0.8rem 0 hsl(0, 0%, 0%, 5100%);
+
+// Fonts
+// --------------------------------------------------
+@font-face {
+  font-family: "Figtree";
+  src: url("../assets/fonts/Figtree-VariableFont_wght.ttf");
+}
+
+// Reset
+// --------------------------------------------------
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  font-style: italic;
+}
+
+body {
+  font-family: "Figtree";
+  font-weight: 500;
+  line-height: 1.5;
+  color: $color-gray-950;
+  background-color: $color-yellow;
+}
+
+// Structure
+// --------------------------------------------------
+main {
+  display: grid;
+  grid-template-columns:
+    minmax(2.4rem, 1fr)
+    min(100% - 2.4rem * 2, 38.4rem)
+    minmax(2.4rem, 1fr);
+  height: 100vh;
+  align-items: center;
+}
+
+.card {
+  grid-column: 2;
+  display: grid;
+  row-gap: 2.4rem;
+  border: 1px solid $color-gray-950;
+  border-radius: 2rem;
+  background-color: $color-white;
+  box-shadow: $drop-shadow;
+  padding: 2.4rem;
+
+  &__image-box {
+    height: 20rem;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 1.2rem;
+  }
+
+  &__category {
+    justify-self: start;
+    font-size: clamp(1.2rem, calc(3.508vw - 0.1157rem), 1.4rem);
+    font-weight: 800;
+    padding: 0.4rem 1.2rem;
+    background-color: $color-yellow;
+    border-radius: 0.4rem;
+  }
+
+  &__date {
+    font-size: clamp(1.2rem, calc(3.508vw - 0.1157rem), 1.4rem);
+  }
+
+  &__link {
+    color: $color-gray-950;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: $color-yellow;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2rem, calc(7.017vw - 0.6315rem), 2.4rem);
+    font-weight: 800;
+  }
+
+  &__description {
+    font-size: clamp(1.4rem, calc(3.5vw + 0.0842rem), 1.6rem);
+    color: $color-gray-500;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    column-gap: 1.2rem;
+  }
+
+  &__author-image {
+    height: 3.2rem;
+  }
+
+  &__author-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+}

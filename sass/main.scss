@@ -7,10 +7,25 @@ $color-gray-950: hsl(0, 0%, 7%);
 
 // Shadows
 // --------------------------------------------------
-$drop-shadow: 0.8rem 0.8rem 0 hsl(0, 0%, 0%, 5100%);
+$drop-shadow: 0.8rem 0.8rem 0 hsl(0, 0%, 0%, 100%);
 
-// Fonts
+// Font
 // --------------------------------------------------
+// Font sizes
+$font-size-xs: 1.2rem;
+$font-size-sm: 1.4rem;
+$font-size-base: 1.6rem;
+$font-size-lg: 2rem;
+$font-size-xl: 2.4rem;
+
+// Font weights
+$font-weight-medium: 500;
+$font-weight-extrabold: 800;
+
+// Line height
+$line-height-base: 1.5;
+
+// Font Variabled
 @font-face {
   font-family: "Figtree";
   src: url("../assets/fonts/Figtree-VariableFont_wght.ttf");
@@ -46,8 +61,8 @@ img {
 
 body {
   font-family: "Figtree";
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
   color: $color-gray-950;
   background-color: $color-yellow;
 }
@@ -72,7 +87,7 @@ main {
   border-radius: 2rem;
   background-color: $color-white;
   box-shadow: $drop-shadow;
-  padding: 2.4rem;
+  padding: 2.3rem;
 
   &__image-box {
     height: 20rem;
@@ -81,7 +96,6 @@ main {
   }
 
   &__image {
-    height: 100%;
     object-fit: cover;
   }
 
@@ -93,15 +107,15 @@ main {
 
   &__category {
     justify-self: start;
-    font-size: clamp(1.2rem, calc(3.508vw - 0.1157rem), 1.4rem);
-    font-weight: 800;
+    font-size: clamp($font-size-xs, calc(3.508vw - 0.1157rem), $font-size-sm);
+    font-weight: $font-weight-extrabold;
     padding: 0.4rem 1.2rem;
     background-color: $color-yellow;
     border-radius: 0.4rem;
   }
 
   &__date {
-    font-size: clamp(1.2rem, calc(3.508vw - 0.1157rem), 1.4rem);
+    font-size: clamp($font-size-xs, calc(3.508vw - 0.1157rem), $font-size-sm);
   }
 
   &__link {
@@ -114,12 +128,12 @@ main {
   }
 
   &__title {
-    font-size: clamp(2rem, calc(7.017vw - 0.6315rem), 2.4rem);
-    font-weight: 800;
+    font-size: clamp($font-size-lg, calc(7.017vw - 0.6315rem), $font-size-xl);
+    font-weight: $font-weight-extrabold;
   }
 
   &__description {
-    font-size: clamp(1.4rem, calc(3.5vw + 0.0842rem), 1.6rem);
+    font-size: clamp($font-size-sm, calc(3.5vw + 0.0842rem), $font-size-base);
     color: $color-gray-500;
   }
 
@@ -134,7 +148,7 @@ main {
   }
 
   &__author-name {
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-extrabold;
   }
 }
